@@ -1,0 +1,27 @@
+<div class="login-container">
+ <h2 class="text-center">{{ .Title }}</h2>
+ <form method="post" action="#">
+  {{ ShowMessage .Validation.Status }}
+
+  <div class="mb-3">
+   <label for="email" class="form-label">Nama</label>
+   <input type="text" class="form-control" id="nama" placeholder="Enter your name" name="nama" value='{{ ShowValueMessage .Validation.ValidationValue "Nama" }}'>
+   {{ ShowFailedMessage .Validation.ValidationListError "Nama" }}
+
+  </div>
+  <div class="mb-3">
+   <label for="email" class="form-label">Email address</label>
+   <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" value='{{ ShowValueMessage .Validation.ValidationValue "Email" }}'>
+   {{ ShowFailedMessage .Validation.ValidationListError "Email" }}
+  </div>
+  <div class="mb-3">
+   <label for="password" class="form-label">Password</label>
+   <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password" value="">
+   {{ ShowFailedMessage .Validation.ValidationListError "Password" }}
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+  <div class="forgot-password mt-3">
+   <a href="login">Sudah punya akun?</a>
+  </div>
+ </form>
+</div>

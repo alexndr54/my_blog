@@ -1,0 +1,24 @@
+<div class="login-container">
+ <h2 class="text-center">{{ .Title }}</h2>
+ {{ ShowMessage .Validation.Status }}
+ <form action="#" method="post">
+  <div class="mb-3">
+   <label for="email" class="form-label">Email address</label>
+   <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" value='{{ ShowValueMessage .Validation.ValidationValue "Email" }}'>
+   {{ ShowFailedMessage .Validation.ValidationListError "Email" }}
+  </div>
+  <div class="mb-3">
+   <label for="password" class="form-label">Password</label>
+   <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password">
+   {{ ShowFailedMessage .Validation.ValidationListError "Password" }}
+  </div>
+  <div class="mb-3 form-check">
+   <input type="checkbox" class="form-check-input" id="rememberMe">
+   <label class="form-check-label" for="rememberMe">Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  <div class="forgot-password mt-3">
+   <a href="register">Belum punya akun?</a>
+  </div>
+ </form>
+</div>
