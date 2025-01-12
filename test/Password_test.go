@@ -27,7 +27,7 @@ func TestHashPassword(t *testing.T) {
 
 func TestVerifyPassword(t *testing.T) {
 	PasswordHashed := "$2a$10$Umt/AguxazFp2wWmqW90FeYtLE4kalEdtlak2g7VyJ632IbqE2GHK"
-	PasswordAsli := "sialexsofficial@gmail.com"
+	PasswordAsli := "demo@gmail.com"
 	Verify := helper.VerifyPassword(PasswordHashed, PasswordAsli)
 	assert.True(t, Verify)
 	t.Log("Passsword Verify: ", Verify)
